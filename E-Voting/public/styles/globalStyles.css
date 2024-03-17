@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --blackGrey:#000000;
+    --blueGradient:linear-gradient( #1845ad, #23a2f6);
+    --orangeGraident: linear-gradient( to right, #ff512f, #f09819);
+    --glass:rgba(255, 255, 255, 0.07);
+    --glassBold:rgba(255, 255, 255, 0.255);
+}
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button{
+    transition: all 0.1s ease;
+}
+button:hover{
+    opacity: 0.5;
+    border-radius: 2px;
+    /* border: solid grey 4px; */
+}
+body{
+    background: var(--blackGrey);
+}
+
+
+
+
+
+#home,#admin{
+    /* height: 100vh; */
+    background-color: var(--blackGrey);
+}
+
+#home .container,#admin .container{
+    padding: 30px;
+    /* height: 100%; */
+    align-items: start;
+}
+#admin .container{
+    align-items: center;
+}
+#home .container{
+    color: white;
+}
+#home h1{
+    text-align: center;
+    width: 100%;
+    font-size: 35px;
+    
+}
+
+#home h3{
+    /* text-align: center; */
+    /* width: 100%; */
+    font-size: 22px;
+    
+}
+#home .btn{
+    background: var(--orangeGraident);
+    color: white;
+    border:solid #ff512f 2px;
+    /* border:none; */
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 50px 0 30px 0;
+}
+
+
+#home .btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#home .election {
+    width:90%;
+    background: var(--glassBold);
+    backdrop-filter: blur(10px);
+    margin: 10px 0;
+    height: 100px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    align-items: start;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    justify-content: space-around;
+}
+#home .election button{
+    background: #1845ad;
+    padding: 8px 20px;
+    border: solid white 1px;
+    /* border: none; */
+    border-radius: 14px;
+}
+
+#home .election a{
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+input,select {
+    width: 250px;
+}

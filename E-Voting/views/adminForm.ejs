@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/adminStyles.css">
+</head>
+<body>
+    <section id="admin">
+
+
+        <div class="container adminForm d-flex">
+            <h1>Add New Election</h1>
+            <form action="electionUpload" method="POST" class="d-flex">
+                <div>
+
+                    <label for="electionType">Choose Election Type:</label>
+                    <select name="electionType" id="electionType">
+                        <option value="class-rep">Class Rep</option>
+                        <option value="department-sec">Department Secretary</option>
+                        <option value="stud-council">Student Council</option>
+                        <option value="clg-chairman">College Chairman</option>
+                    </select>
+                </div>
+                   
+            <div id="candidate-lbls">
+                
+                <label for="electionType">Choose Candidates:</label>
+                <!-- <input type="checkbox" id="candidates" name="candidates"/> -->
+                
+                <br>
+                
+                <% if (data.length === 0) { %>
+                 <p>No Candidates Registered</p>
+                <% } %>
+                <% for( var i=0;i<data.length;i++){ %>
+                    
+                    <input type="checkbox" id="candidates" name="candidates" value="<%= data[i].nominator_name  %>-<%= data[i].dno %>"/>
+                        <label for=<%= data[i].nominator_name %>><%= data[i].nominator_name %> - <%= data[i].dno %></label>
+                    
+                        <br>
+                        <% } %>
+               
+                        <label for="">
+            </div>
+            <!-- <input type="date" name="electionDate"/> -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <% if (msg==="success") { %>
+            
+            <div class="d-flex" style="margin:50px 0 ;background-color: white;height: 50px;width: 250px;border-radius: 10px;">
+                <p style="color: black;">Election Added Successfully</p>
+            </div>
+                
+                <% } %>
+    </div>
+</section>
+
+
+</body>
+
+
+<script>
+    
+</script>
+</html>

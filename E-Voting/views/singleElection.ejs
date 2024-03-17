@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    
+    <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="/styles/adminStyles.css">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
+</head>
+<body>
+
+    <section id="admin">
+        <div class="container adminForm d-flex nominationForm">
+            <h1>
+                
+               <%=   data[0].electionType  === "class-rep" ?  "Class Representative" :
+               data[0].electionType==="department-sec" ? "Department Secretary" :
+                data[0].electionType==="stud-council" ? "Student Council" : 
+                data[0].electionType==="clg-chairman" ? "College Chairman" : 
+                data[0].electionType  %> Election 
+                  
+                </h2>
+         
+        
+            <form action="/voting/<%= data[0].u_id %>/<%= user %>" method="POST">
+                
+                <div>
+
+                    <label for="electionType">Choose Election Type:</label>
+                    <select name="electionType" id="electionType">
+                        <div style="height: 100px;padding: 20px;">
+                            <option value="<%= data[0].electionType %>"> <%=   data[0].electionType  === "class-rep" ?  "Class Representative" :
+                                data[0].electionType==="department-sec" ? "Department Secretary" :
+                                data[0].electionType==="stud-council" ? "Student Council" : 
+                                data[0].electionType==="clg-chairman" ? "College Chairman" : 
+                                data[0].electionType  %>
+                            </option>
+                            </div>
+                        </select>
+                    </div>
+                
+                
+                    <div>
+
+                        <label for="voting">Select your Vote : </label>
+                        <select name="voting" id="voting">
+                            <!-- <option></option> -->
+                            <% for( var i=0;i<data[0].candidates.length;i++){ %>
+                                <div>
+                                    
+                                    <option value="<%= data[0].candidates[i].name %> - <%= data[0].candidates[i].dno %>"><%= data[0].candidates[i].name %> - <%= data[0].candidates[i].dno %></option>
+                                </div>
+                                <% } %>
+                                <!-- <option></option> -->
+                            </select>
+                        </div>
+
+
+                        <div class="d-flex" style="width: 100%;">
+
+                            <button type="submit">Vote</button>
+                        </div>
+        </form>
+
+        
+        <% if (msg==="voted") { %>
+            
+            <div class="d-flex" style="margin:50px 0 ;background-color: white;height: 50px;width: 200px;border-radius: 10px;">
+                <p style="color: black;">Voted Successfully</p>
+            </div>
+                
+                <% } %>
+                <% if (msg==="already voted") { %>
+                    
+                    
+                    <div class="d-flex" style="margin:50px 0 ;background-color: white;height: 50px;width: 200px;border-radius: 10px;">
+                    <p style="color: black;">Already Voted</p>
+                </div>
+          
+                    
+                    
+                    <% } %>
+                    <% if (msg==="Empty") { %>
+                     
+                        <div>
+                            <% for( let k = 0; k < nominators.length; k++ ) { %>
+                                <img src="<%= nominators[k].banner_url %>" />
+                                <% } %>
+                            </div>
+                            <% } %>
+       
+    </div>
+    </section>
+        
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="styles/globalStyles.css">
+</head>
+<body>
+
+    <section id="home">
+
+        <div class="container d-flex">
+            
+            <!-- <h1>Home</h1> -->
+            
+        <h1>Hello <%= user.username %></h1>
+        <!-- <h1><%= token %></h1> -->
+        
+        <% var uid = user.u_id %>
+        
+        
+        <button class="btn"><a href="/nomination/<%=user.u_id%>">Nominate Yourself Here</a></button>
+        
+        <h3>Upcoming Elections</h3>
+        <% for(  i = 0; i < data.length; i++ ) { %>
+            <!-- <div onclick="myFunc()"> -->
+
+                <div class="election d-flex">
+                    <h2>
+                        <%= data[i].electionType  === "class-rep" ?  "Class Representative" : 
+                        data[i].electionType==="department-sec" ? "Department Secretary" :
+                         data[i].electionType==="stud-council" ? "Student Council" : 
+                         data[i].electionType==="clg-chairman" ? "College Chairman" :
+                          data[i].electionType  %> Election
+                          
+                        </h2>
+         
+                    <button><a href="election/<%=data[i].u_id%>/<%=user.u_id%>">Know More</a></button>
+                </div>
+                <!-- </div> -->
+                <% } %>
+                
+                
+                
+            </div>
+            
+        </section>
+            
+            <script type="text/javascript">
+                
+//     console.log(<%uid%>);    
+// const data = <%= uid %>
+// console.log(data);    
+
+
+// localStorage.setItem("uid",<%=user.u_id %>)
+// console.log(localStorage.getItem("uid"))
+
+
+
+</script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Count</title>
+
+    
+    
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/adminStyles.css">
+</head>
+<body>
+    <section id="admin">
+        <div class="container d-flex">
+            <h1>Voting Results</h1>
+        <div class="content d-flex">
+
+             
+            <% for( let i = 0; i < elections.length; i++ ) { %>
+                <a style="height: auto; padding: 20px;">
+                    <div class="box d-flex">
+
+                        <p>Total Votes for  <%= elections[i].electionType  === "class-rep" ?  "Class Representative" : 
+                    elections[i].electionType==="department-sec" ? "Department Secretary" :
+                    elections[i].electionType==="stud-council" ? "Student Council" : 
+                    elections[i].electionType==="clg-chairman" ? "College Chairman" :
+                    elections[i].electionType  %> Election : <%= elections[i].votes.length %>  </p>
+                    <br>
+
+                    <% var voteCount = [] %>
+                    
+                    <% for( let k = 0; k < elections[i].candidates.length; k++ ) { %>
+
+                        <% voteCount[k] = {
+                            no:"candidate"+k,
+                            name:elections[i].candidates[k].name,
+                            dno:elections[i].candidates[k].dno,
+                            vote:0,
+                        } %>
+                       <!-- <%=voteCount[k].name %> -->
+                       <!-- <%=  elections[i].votes[0].split("-")[1] %> %> -->
+                       <!-- <%=voteCount[k].dno %> -->
+
+                        
+                       <% for( let j = 0; j < elections[i].votes.length; j++ ) { %>
+                        <!-- <%=elections[i].votes[j].split("-")[1].slice(1) === voteCount[k].dno %>  -->
+                       
+                        <!-- <%=  voteCount[i].dno %> -->
+                            <!-- <%= elections[i].votes[j].split("-")[1] %>  - <%=  voteCount[k].dno %> -->
+                          
+
+                            <% if (elections[i].votes[j].split("-")[1].slice(1) === voteCount[k].dno ) { %>
+                                    <% voteCount[k].vote++ %>
+                                <% } %>
+                    
+                        <% } %>
+                        
+                        <p> <%= voteCount[k].name %> :
+                         <%= voteCount[k].vote %></p>
+                        <% } %>
+                            
+                </p>
+            </div>
+        </a>
+        <% } %>
+           
+    </div>
+    </div>
+    </section>
+    </body>
+</html>

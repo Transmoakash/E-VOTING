@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomination</title>
+
+    
+    
+    <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="/styles/adminStyles.css">
+</head>
+<body>
+    
+    <section id="admin">
+
+        <div class="container d-flex adminForm nominationForm">
+
+            <h1>Nomination Form</h1>
+            <!-- <div class="content"> -->
+
+                <form action="/nomination/<%=user[0].u_id%>/<%= user[0].dno %>" method="POST" class="d-flex" enctype="multipart/form-data">
+                    <div>
+
+                        <label for="electionType">Choose Election Type:</label>
+                        <select name="electionType" id="electionType">
+                            <option value="class-rep">Class Rep</option>
+                            <option value="department-sec">Department Secretary</option>
+                            <option value="stud-council">Student Council</option>
+                            <option value="clg-chairman">College Chairman</option>
+                        </select>
+                    </div>
+                        <div>
+
+                            <label for="candidateName">Enter Candidate Name:</label>
+                            <input name="candidateName" id="candidateName" placeholder="Candidate Name" />
+                        </div>
+                        <div>
+
+                            <label for="banner">Choose your Banner:</label>
+                            <input name="banner" id="banner" placeholder="Banner" type="file" />
+                        </div>
+                        
+                        <div class="d-flex" style="width: 100%;">
+
+                            <button type="submit">Submit</button>
+                        </div>
+                </form>
+            <!-- </div> -->
+
+            <% if (msg==="success") { %>
+            
+                <div class="d-flex" style="margin:50px 0 ;background-color: white;height: 50px;width: 200px;border-radius: 10px;">
+                    <p style="color: black;">Nominated Successfully</p>
+                </div>
+                    
+                    <% } %>
+            </div>
+    </section>
+</body>
+</html>

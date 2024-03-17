@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+
+    
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/adminStyles.css">
+</head>
+<body>
+    
+    <section id="admin">
+
+        <div  class="container d-flex">
+            <h1>Users List</h1>
+
+            <div class="content d-flex users">
+               
+            
+                    <% for( let i = 0; i < data.length; i++ ) { %>
+                    
+                        <a href="/user/<%= data[i].u_id %>">
+                            <div class="box d-flex">
+                                <h3>Student Name : <%= data[i].username %></h3>
+                                <h3>Student Dno: <%= data[i].dno %></h3>
+                                <br>
+                                
+                                <div >
+                                    <!-- <p> -->
+                                    <p >Voted For : <%= data[i].rep_election ? "Class Representative Election" : null%> 
+                                        <%= data[i].sec_election ? ", Department Secretary Election" : null%> 
+                                        <%= data[i].coun_election ? ", Student Council Election" : null%> 
+                                        <%= data[i].chair_election ? ", College Chairman Election" : null%> 
+                                    </p>
+                                            </div>
+                            </div>
+    
+                        </a>
+                    <% } %>
+                   
+            </div>
+        </div>
+    </section>
+    
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+
+:root{
+    --blackGrey:#000000;
+    --blueGradient:linear-gradient( #1845ad, #23a2f6);
+    --orangeGraident: linear-gradient( to right, #ff512f, #f09819);
+    --glass:rgba(255, 255, 255, 0.07);
+    --glassBold:rgba(255, 255, 255, 0.255);
+}
+
+
+
+#admin{
+    color: white;
+}
+
+#admin .container h1{
+    text-align: center;
+    width: 100%;
+    /* font-size: 30px; */
+}
+#admin .content{
+    margin: 50px;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#admin .content a{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    border:none;
+    margin: 5px 0;
+    background: var(--blueGradient);
+}
+#admin .content a .box{
+    height: 100%;
+    justify-content: space-evenly;
+    /* padding: 20px; */
+    /* align-items: start; */
+}
+#admin .content a:nth-child(even){
+   
+    background: var(--orangeGraident);
+}
+
+
+#admin .content  a{
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+}
+#admin .content  h1{
+    /* font-size: 40px; */
+}
+#admin .content  h3{
+    /* font-size: 35px; */
+    /* font-weight: 400; */
+}
+
+
+
+#admin .adminForm form{
+    /* height: 350px; */
+    margin: 10px 0;
+    background-color: var(--glassBold);
+    border-radius: 12px;
+    align-items: start;
+    padding: 20px;
+}
+#admin .adminForm form select{
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+#admin .adminForm form div{
+    margin: 20px 0;
+}
+
+#admin .adminForm form #candidate-lbls input,#admin .adminForm form #candidate-lbls label{
+    margin: 10px 0;
+}
+#admin .adminForm form #candidate-lbls input[type="checkbox"]{
+    background: #000;
+    height: 20px;
+    width: 50px;
+}
+#admin .adminForm form input{
+    /* background: ; */
+    padding: 10px 20px;
+    color: black;
+    border-radius: 8px;
+    font-size: 17px;
+    border: none;
+}
+#admin .adminForm form input::placeholder{
+    /* background: ; */
+
+    color: black;
+}
+#admin .adminForm form input:focus-visible{
+    /* background: ; */
+
+    outline: solid black 2px;
+}
+
+
+#admin .adminForm form button{
+    background: var(--orangeGraident);
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+}
+
+
+
+#admin .nominationForm {
+    align-items: center;
+}
+
+
+#admin .nominationForm form{
+    /* height: 350px; */
+   /* width: 5%; */
+}
+#admin .nominationForm form select option{
+    /* height: 350px; */
+   /* width: 40%; */
+   background-color: black;
+    /* padding: 20px; */
+    color: white;
+    font-size: 17px;
+}
+
+
+#admin .content.users a h3{
+    font-weight: 400;
+}
+#admin .content.users a p{
+    
+}
+#admin .content.users a{
+    width: 450px;
+    height: auto;
+}
+
+#admin .content.users a .box{
+    /* width: 300px; */
+    /* height: 200px; */
+    padding: 20px;
+    align-items: start;
+}

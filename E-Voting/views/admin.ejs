@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/adminStyles.css">
+</head>
+<body>
+    <section id="admin">
+
+        <div  class="container d-flex">
+            <h1>Hello Admin,<%= admin.username %> !</h1>
+
+            <div class="content d-flex">
+               
+                    <a href="/adminForm/<%= admin.u_id %>">
+                        <div class="box d-flex">
+                            Add New Election
+                        </div>
+
+                    </a>
+                    <a href="/users">
+                          <div class="box d-flex">
+                            View All Students
+                        </div>
+                    
+                    </a>
+
+                    <a href="/voteCount">
+                        <div class="box d-flex ">
+                            Voting Count
+                        </div>
+                    </a>
+                    
+                        
+                <!-- <button><a href="/adminForm/<%= admin.u_id %>">Vote</a></button> -->
+                <!-- <button><a href="/adminForm/<%= admin.u_id %>">Users</a></button> -->
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+</html>
